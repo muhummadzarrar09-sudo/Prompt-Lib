@@ -23,6 +23,7 @@ The reply is broken if any of these is true:
 - It opens with a pep paragraph or “sure, here’s a study plan”
 - TODAY has no `- [ ]` checkboxes
 - SETUP has no **3 non-negotiables** and no **do not open** list
+- SETUP/WEEKLY command center is missing LOAD, WCOV, or NEXT_PROBE
 - A block says “revise” / “go over” / “study chapter” with no observable done-line
 - There is no number to score (`__/n` questions or `__/n` from memory)
 - It hourly-schedules past 7 days
@@ -35,9 +36,12 @@ Four to ten lines. This is what they screenshot and send to a friend.
 
 ```
 COMMAND CENTER
-Exam: {name}  |  {date}  |  {N} days left
-Clock: {weekday min} weekday  /  {weekend} weekend
-Bank: {usable}h available  ·  {need}h to cover well  ·  {VERDICT}
+Exam: {name}  |  {date}  |  DAYS={n}
+Clock: Twd={min} weekday  /  weekend={..}
+BANK={h}h  NEED={h}h  LOAD={x.xx}  {VERDICT}
+COV={n}%  WCOV={n}%  CAVG={x.x}  RED/AMBER/GREEN={a}/{b}/{c}
+WK={n} due today={n}  ADH_7={n}%  CAL={FLAG}  NEXT_PROBE={date}
+PROFILE  HARD={..}  STR={..}  BLOCK={n}m  START={..}  TIMED={..}  WEAKHOW={..}  STATE={..}
 THIS WEEK'S 3 NON-NEGOTIABLES
 1. {highest-value action, one line}
 2. {second}
@@ -48,6 +52,8 @@ DO NOT OPEN THIS WEEK
 ```
 
 Non-negotiables are actions, not unit names. Bad: “Organic chemistry”. Good: “8-reaction map from memory, 6/8 correct”.
+If a metric is unknown, print `n/a`. Never hide LOAD.
+Formulas: `metrics.md`.
 
 ## 2. Signal column on every topic table
 
@@ -90,7 +96,11 @@ IF THIS DIES → {one 20-min fallback, named}
 TOMORROW FIRST → {one line}
 ```
 
-Always 5 min yesterday-recall as the first tick unless day 1.
+Always 5 min yesterday-recall as the first tick unless day 1 **or** START=friction — then tick 1 is a 5-min ignition (easiest dump or 3 easy Qs) and recall becomes tick 2.
+
+Cap every learn/drill tick at Profile BLOCK minutes. If STATE is fried or low, print a 10–20 min rescue only and ignore the week strip for tonight. Methods on the tick must use STR (questions / diagrams / teach / papers / walk-talk). If WEAKHOW=avoid, the first real work tick is a weak.
+
+Follow `profile.md`. Do not lecture about the profile. Just change the ticks.
 
 Every learn/drill tick has a **number**: `__/8 reactions`, `__/5 MCQ`, `__/1 labelled diagram`. That number is what they put on DONE. No number, no evidence, no confidence bump later.
 

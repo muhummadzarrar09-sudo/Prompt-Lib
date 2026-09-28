@@ -6,7 +6,7 @@ description: >
   spaced drills and a paste-back Study OS Card. Use when the user wants a study
   plan, revision timetable, exam schedule, weak-topic tracker, daily study
   session, weekly reset, exam countdown, says they fell behind, pastes a
-  STUDY OS CARD, or mentions syllabus + exam date + study time.
+  STUDY OS CARD, or mentions syllabus + exam date + study time, or shares graded evidence (past papers, midterm/quiz scores, marked assignments).
   Also use when they cannot start, freeze on timed papers, are fried or anxious,
   name ADHD/dyslexia/burnout, or ask to shape the plan around what they find hard
   versus what actually works for them.

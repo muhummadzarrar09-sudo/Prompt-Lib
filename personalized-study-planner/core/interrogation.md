@@ -58,12 +58,14 @@ Twd / Twe = median of last week if they gave it, else what they claim, marked AS
 - For each weak: what goes wrong in one line (mix-up, blank, slow, arithmetic, setup)
 - Last time it bit them (test / homework / blank in class)
 
-**P7 — Evidence**
-- Last test / mock / homework scores by topic if they have any
-- Past papers on hand (count)
+**P7 — Evidence (must ask if they have had any graded work)**
+- Last test / mock / homework scores **by topic** if they have any
+- Past papers on hand (count) — and how many are still **untouched** (those get scheduled as SLICE / PAPER diagnostics)
+- Which papers have mark schemes (self-marked without one = half-weight evidence)
+- Assignments / labs / projects **due inside the study window** + rough hours each (feeds ASGN — BANK loses this time)
 - Teacher comment if any
 
-This is the first CAL seed. A 38% on circuits + confidence 4 = OVER before you plan.
+This is the first CAL seed, and per RULEBOOK 19 it overrides self-report: a 38% on circuits + confidence 4 = OVER before you plan — cap that confidence at 2, weak list. These scores go on the card as `Last P` with the source: `42 (midterm 12 Sep)`.
 
 **P8 — Method**
 - What already works (questions, Anki, teaching a friend, past papers)

@@ -14,6 +14,10 @@ A drill without a score is still a vibe. Diagnostics produce P, CAL, HIT, PAPER,
 
 Never run PAPER on a 30-minute evening. MICRO still happens.
 
+## The student's own papers are diagnostics
+
+Untouched past papers they hand you at intake are the highest-value diagnostics you have. Schedule them: one early SLICE as a baseline when ≥ 14 days left, the rest phased per `priority-and-time.md`. With a mark scheme = full weight; self-marked = half weight, say so. If they have no past papers, state that and name the substitute (question bank, end-of-chapter questions, board sample paper) — do not silently assume paper practice will happen.
+
 ## Who is due
 
 A topic is due for PROBE if any of:
@@ -71,6 +75,14 @@ PROBE RESULT · {topic} · __/{n} · minutes · which numbers wrong · why
 ```
 
 Write questions at the right level. Do not write a textbook. If you are not confident writing items for that syllabus, tell them to open a past paper at these question numbers instead — still collect P.
+
+Profile overrides (`profile.md`):
+
+- TIMED=freeze or STATE=anxious → 3 questions, they mark themselves, no surprise, no timer-as-fail
+- STATE=fried/low → no PROBE tonight unless they asked. MICRO only
+- BLOCK=15 → 3 questions max
+- STR=diagrams → at least one item is “draw X from memory”
+- STR=teach → one item is “say the 5 steps out loud, then tick which you missed”
 
 ## After a result
 

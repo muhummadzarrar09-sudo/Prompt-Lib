@@ -8,6 +8,7 @@ For each topic:
 
 - **Weight** 1–5 from exam importance. Default 3 if unknown. Use official weighting when given.
 - **Gap** = 6 − confidence
+- **Confidence is evidence-capped first** (RULEBOOK 19): a ≤50% graded score on the topic means Gap is computed from confidence 2, whatever they claimed; ≥80% floors at 3
 - **Freshness** = 1 if practiced in last 7 days, 2 if 8–21 days, 3 if never practiced or > 21 days
 - **Weak multiplier** = 1.5 if on the weak list, else 1.0
 
@@ -21,7 +22,7 @@ Remaining calendar days = exam date − today.
 Subtract 1 lighter day per week.  
 If ≥ 21 days left, also subtract 2 buffer days.
 
-`Usable hours = remaining study days × real daily average × 0.85` (slippage).
+`Usable hours = remaining study days × real daily average × 0.85 − ASGN` (slippage, minus assignments / labs due inside the window — `metrics.md`).
 
 Hours needed (adjust if they are clearly faster/slower):
 
@@ -30,7 +31,7 @@ Hours needed (adjust if they are clearly faster/slower):
 | New, never studied | 1.5–3 |
 | Seen in class, not revised | 1–1.5 |
 | Revised, needs exam practice | 0.75–1 |
-| Weak / repeatedly failed | add 30–50% |
+| Weak / repeatedly failed | ×1.4 on top of the row above |
 | Full past-paper block | 1–1.5 |
 
 Verdict:

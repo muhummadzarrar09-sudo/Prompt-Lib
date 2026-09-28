@@ -17,7 +17,8 @@ A plan is a function of metrics. Interrogation exists to fill them. Diagnostics 
 | Twd | Weekday minutes | what they **actually** did last week, not the fantasy. If unknown, take what they typed and mark it ASSUMED | min |
 | Twe | Weekend minutes | same rule | min |
 | TAVG | Average daily minutes | (5×Twd + Twe_sat + Twe_sun) / 7 | min |
-| BANK | Usable hours | SDAYS × (TAVG/60) × 0.85 | hours, 1 decimal |
+| ASGN | Assignment tax | hours of assignments / labs / projects due inside the study window (P7). A deadline inside the window is not study time | hours, 1 decimal |
+| BANK | Usable hours | SDAYS × (TAVG/60) × 0.85 − ASGN | hours, 1 decimal |
 | NEED | Hours to cover well | sum of per-topic estimates (see below) | hours, 1 decimal |
 | LOAD | Load ratio | NEED / BANK | 2 decimals |
 | VERDICT | Capacity verdict | LOAD ≤ 1.00 ON TRACK; 1.01–1.25 TIGHT; > 1.25 NOT ENOUGH TIME | enum |
@@ -90,6 +91,8 @@ Map confidence → expected probe %:
 | NEXT_PROBE | Next diagnostic due | from the interval table | date |
 
 OVER topics get an extra probe next session even if the student feels fine. UNDER topics can skip a re-teach and go to mixed questions.
+
+At intake, graded work the student already has seeds this family: a midterm, quiz, or marked assignment score counts as P with source and date (`Last P: 42 (midterm 12 Sep)`), and RULEBOOK 19 caps / floors confidence accordingly. Probes keep it honest after that. Evidence they walk in with is never thrown away.
 
 On DONE: if they report a score, recompute CAL and **move confidence toward the evidence**, not toward their mood. One step per probe (4→3 if they scored 40% etc). Never jump 5→1 on one quiz unless they asked to.
 

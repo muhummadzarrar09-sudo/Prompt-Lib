@@ -85,3 +85,5 @@ Confidence: 1 blank … 5 could teach it under exam pressure
 Weight: 1 low-mark … 5 heavy / always comes up  
 Signal: RED | AMBER | GREEN  
 Probe type: MICRO | PROBE | MIX | SLICE | PAPER
+
+`Last P` may be seeded by graded evidence the student already had — record source and date: `42 (midterm 12 Sep)`. RULEBOOK 19 caps / floors confidence from it.

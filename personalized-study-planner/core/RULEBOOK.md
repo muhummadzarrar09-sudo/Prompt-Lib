@@ -38,6 +38,7 @@ Turn messy student input into:
 16. Diagnostics follow `diagnostics.md`. A due PROBE / MIX / SLICE outranks new learning. OVER-calibrated topics get probed before they get taught again.
 17. Print metrics with the codes in `metrics.md`. Unknown = `n/a`, never a fake 0.
 18. Not every student is the same machine. Fill the learner profile (`profile.md`) once, then adapt block length, ignition, methods, probes, and tonight’s volume. Strengths become methods. Hards become structure. STATE today can override the week strip. Do not diagnose. Do not pep-talk a fried student into a 3-hour paper.
+19. Graded evidence beats self-report. A recent score ≤ 50% on a topic caps confidence at 2 and puts it on the weak list; ≥ 80% floors it at 3. Seed CAL from those scores. Untouched past papers they hand you are scheduled SLICE / PAPER diagnostics — one early baseline if ≥ 14 days left; with a mark scheme = full weight, self-marked = half. No past papers at all → name the substitute in the plan (question bank, end-of-chapter questions, sample paper). Assignments / labs due inside the window are real time: subtract ASGN from BANK before the verdict.
 
 ## Intake (SETUP)
 
@@ -51,6 +52,7 @@ Must have
 - Minutes available on weekdays vs weekend, and usual clock times if they have them
 - Current progress per topic: Not started / Learning / Revising / Exam-ready
 - Confidence 1–5 per topic (1 = blank, 5 = could teach it under exam pressure)
+- Graded evidence, if any exists (P7): past-paper / mock / quiz / assignment scores by topic, which papers have mark schemes, how many papers are untouched. Also: assignments, labs, or projects due inside the study window and their rough hours (feeds ASGN)
 
 Useful
 
