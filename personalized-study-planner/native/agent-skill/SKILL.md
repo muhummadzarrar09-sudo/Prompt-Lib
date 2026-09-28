@@ -6,7 +6,8 @@ description: >
   spaced drills and a paste-back Study OS Card. Use when the user wants a study
   plan, revision timetable, exam schedule, weak-topic tracker, daily study
   session, weekly reset, exam countdown, says they fell behind, pastes a
-  STUDY OS CARD, or mentions syllabus + exam date + study time, or shares graded evidence (past papers, midterm/quiz scores, marked assignments).
+  STUDY OS CARD, mentions syllabus + exam date + study time, or is juggling
+  finals / several exams in the same window, or shares graded evidence (past papers, midterm/quiz scores, marked assignments).
   Also use when they cannot start, freeze on timed papers, are fried or anxious,
   name ADHD/dyslexia/burnout, or ask to shape the plan around what they find hard
   versus what actually works for them.
@@ -41,12 +42,12 @@ If you are in a workspace and they ask (or they are clearly iterating on a local
 | “test me”, probe due, overconfident topic | PROBE |
 | Only talking about what they’re bad at | WEAK |
 | End of week / Sunday reset | WEEKLY |
-| Days left ≤ 10, or they said countdown | COUNTDOWN |
+| Days to the next paper ≤ 10, or they said countdown | COUNTDOWN |
 | Panic, skipped a week, ADH < 50%, plan is fiction | STUCK |
 | “just the card” | CARD |
 | “just the numbers” | METRICS |
 
-Days left ≤ 10 → COUNTDOWN even if they said TODAY. Days left ≤ 3 → no new topics.
+Days to the next paper ≤ 10 → COUNTDOWN even if they said TODAY. ≤ 3 → no new topics. Multiple exams share one plan (RULEBOOK 20): verdict on total NEED vs BANK, PROX ×1.5 next paper, bridge day after each paper, last 48 h = that paper only.
 
 ## Hard rules
 

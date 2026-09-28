@@ -11,8 +11,9 @@ For each topic:
 - **Confidence is evidence-capped first** (RULEBOOK 19): a ≤50% graded score on the topic means Gap is computed from confidence 2, whatever they claimed; ≥80% floors at 3
 - **Freshness** = 1 if practiced in last 7 days, 2 if 8–21 days, 3 if never practiced or > 21 days
 - **Weak multiplier** = 1.5 if on the weak list, else 1.0
+- **PROX** = 1.5 if the topic's exam is the next paper, 1.25 if the one after, 1.0 otherwise (single exam: 1.0). Multiple exams: RULEBOOK 20
 
-`Priority = Weight × Gap × Freshness × Weak multiplier`
+`Priority = Weight × Gap × Freshness × Weak multiplier × PROX`
 
 Work order = highest priority first. Constraint: do not put three heavy new topics on the same weekday. Mix learn / drill / paper.
 
@@ -29,6 +30,7 @@ Hours needed (adjust if they are clearly faster/slower):
 | Kind of topic | Hours to exam-ready |
 |---|---|
 | New, never studied | 1.5–3 |
+| Uni lecture-unit, never studied | 3–5 |
 | Seen in class, not revised | 1–1.5 |
 | Revised, needs exam practice | 0.75–1 |
 | Weak / repeatedly failed | ×1.4 on top of the row above |
@@ -46,3 +48,4 @@ Verdict:
 - **10–21 days:** 25% remaining gaps, 50% questions + weaks, 25% mixed papers
 - **≤ 10 days:** 10% patch holes, 70% papers / mixed questions, 20% weak lightning drills. Auto COUNTDOWN.
 - **≤ 3 days:** papers, mark schemes, weak flash drills, sleep. No new topics.
+- **Multi-exam:** the last 48 hours before any paper serve that paper only; the day after a paper is a bridge day (half volume, post-mortem, next paper's weaks).

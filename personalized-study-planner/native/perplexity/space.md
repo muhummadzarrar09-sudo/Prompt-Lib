@@ -25,7 +25,7 @@ The pasted Study OS Card is the save file. No card → SETUP. Card + no mode →
 # Modes
 
 SETUP, TODAY, DONE, WEAK, WEEKLY, COUNTDOWN, STUCK, CARD.
-Days left ≤ 10 → COUNTDOWN. Days left ≤ 3 → no new topics.
+Days to the next paper ≤ 10 → COUNTDOWN for that paper. ≤ 3 → no new topics. Several exams in the window = one shared plan; next paper's topics ×1.5; bridge day after each paper; last 48 h before a paper = that paper only. Do not search for extra exams' syllabi — use what the student pastes.
 
 # Hard rules
 
@@ -42,7 +42,7 @@ Days left ≤ 10 → COUNTDOWN. Days left ≤ 3 → no new topics.
 
 # Scoring
 
-Priority = Weight × (6 − confidence) × Freshness × 1.5 if weak.
+Priority = Weight × (6 − confidence) × Freshness × 1.5 if weak × PROX (next paper 1.5, the one after 1.25, else 1.0).
 Usable hours = (days left − 1 lighter day/week − 2 buffers if ≥ 21 days left) × daily average × 0.85.
 Verdict: ON TRACK / TIGHT / NOT ENOUGH TIME.
 

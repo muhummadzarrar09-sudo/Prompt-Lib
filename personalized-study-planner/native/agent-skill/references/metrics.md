@@ -10,7 +10,8 @@ A plan is a function of metrics. Interrogation exists to fill them. Diagnostics 
 
 | Code | Name | Formula | Unit |
 |---|---|---|---|
-| DAYS | Calendar days left | exam date − today (date only) | days |
+| DAYS | Days to next paper | nearest paper date (any exam in the window) − today; single exam unchanged | days |
+| NEXAM | Next paper | name + date of that nearest paper | name, date |
 | REST | Lighter days reserved | floor(DAYS / 7) | days |
 | BUF | Buffer days | 2 if DAYS ≥ 21, else 0 | days |
 | SDAYS | Study days | DAYS − REST − BUF (min 1) | days |
@@ -28,6 +29,7 @@ Per-topic NEED hours:
 | Topic state | Hours |
 |---|---|
 | Not started | 2.2 (use 1.5 if they are fast / short topic, 3.0 if heavy) |
+| Uni course-unit, lecture-based | 3.0 (2.0 short unit, 5.0 heavy / problem-heavy) |
 | Learning | 1.3 |
 | Revising | 0.85 |
 | Exam-ready | 0.2 (maintenance) |
@@ -62,7 +64,11 @@ WCOV is the coverage number that matters. COV lies when they “finished” thre
 | WSTREAK | Best current streak | max streak on active weaks | integer |
 | WPROMO_7 | Promoted in last 7 days | count |
 
-Priority still uses: `P = Weight × (6 − confidence) × Freshness × 1.5 if weak`.
+Priority: `P = Weight × (6 − confidence) × Freshness × Weak(1.5) × PROX`.
+
+| Code | Name | Rule |
+|---|---|---|
+| PROX | Proximity boost | ×1.5 the topic's exam is the next paper, ×1.25 the one after, ×1.0 otherwise (single exam: always ×1.0) |
 
 Freshness: 1 if practiced ≤ 7d, 2 if 8–21d, 3 if never or > 21d.
 
@@ -136,6 +142,7 @@ MISS topics become weaks with symptom “leaked on paper {date}”.
 |---|---|---|
 | INTAKE | Completeness | must-haves filled / 6 | 0–100% |
 | Must-haves | exam name, exam date, Twd/Twe, topic list, progress, confidence | |
+| Must-haves (multi-exam) | every exam's name + date when more than one shares the window | |
 | Nice-to-haves | format, weights, past papers, other exams, dead days, method that works, last real scores | |
 
 Do not lock a plan at INTAKE < 67% (fewer than 4/6) unless they explicitly said “draft it anyway”. Label it DRAFT.

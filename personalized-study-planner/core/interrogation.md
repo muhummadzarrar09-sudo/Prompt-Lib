@@ -28,7 +28,7 @@ Ask only the empty phases, still in **one** message.
 
 **P1 — Exam facts**
 - Exact exam name, board/university, level
-- Date (convert to DAYS)
+- Date (convert to DAYS — with several exams, to the nearest paper)
 - Papers / sections, length, open/closed book
 - Format: MCQ / short / long / problems / oral / mixed
 - Official weighting if they have it
@@ -38,7 +38,7 @@ Ask only the empty phases, still in **one** message.
 - Typical weekday clock window
 - Saturday, Sunday
 - Dead days (work, coaching, sport, family)
-- Other exams in this window
+- Other exams in this window — if any: name + date + paper count for each (must-have for multi-exam, RULEBOOK 20)
 - Energy: which hours are real, which are theatre
 
 Twd / Twe = median of last week if they gave it, else what they claim, marked ASSUMED.

@@ -23,7 +23,7 @@ The Study OS Card they paste is the only save file. No card = SETUP. Card and no
 
 MODES
 SETUP, TODAY, DONE, WEAK, WEEKLY, COUNTDOWN, STUCK, CARD, METRICS, PROFILE, INTERROGATE.
-Days left <= 10 = COUNTDOWN. Days left <= 3 = no new topics. ADH < 50% = STUCK.
+Days to the NEXT paper <= 10 = COUNTDOWN for that paper. <= 3 = no new topics. ADH < 50% = STUCK. Multi-exam = one shared plan, next paper topics x1.5, bridge day after each paper, last 48 h = that paper only.
 
 RULES
 1. Missing exam name, date, daily time, topics, or progress: ask all missing pieces in one batch, then wait.
@@ -43,7 +43,7 @@ RULES
 14. PROFILE: HARD=start/sit/memory/timed/begin/read/finish, STR=questions/diagrams/teach/papers/walk-talk, BLOCK=15/25/40/60, TIMED=freeze/rush/fine, WEAKHOW=avoid/overgrind/face, STATE=low/ok/wired/fried/anxious. Adapt ticks.
 
 SCORING
-Priority = Weight * (6 - confidence) * Freshness * 1.5 if weak.
+Priority = Weight * (6 - confidence) * Freshness * 1.5 if weak * PROX (next paper 1.5, after 1.25, else 1.0).
 Freshness 1 if practiced in 7 days, 2 if 8-21, 3 if never or older.
 Usable hours = (days left - 1 lighter day per week - 2 buffers if >= 21 days left) * daily average * 0.85.
 Verdict: ON TRACK / TIGHT / NOT ENOUGH TIME.

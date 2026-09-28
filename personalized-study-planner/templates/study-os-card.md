@@ -10,8 +10,8 @@ Codes: `core/metrics.md`. Unknown metrics are `n/a`, never a fake 0.
 # STUDY OS CARD
 Date: YYYY-MM-DD
 Student:
-Exam:
-Exam date:
+Exam(s): (single, or one per line: name — date)
+Next paper:
 Days left:
 Format:
 Weekday time: ___ min (usually HH:MM–HH:MM)

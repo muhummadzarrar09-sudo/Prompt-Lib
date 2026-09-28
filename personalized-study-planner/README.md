@@ -17,6 +17,7 @@ A **study operating system** you paste into any assistant. You give it syllabus,
 - a tick list for today with a score on every block (`__/8`)
 - a weak-topic drill board with spacing 1d → 3d → 7d → 14d
 - scheduled diagnostic probes so confidence can't float free of evidence
+- multi-exam awareness (finals season): one shared plan, DAYS measured to the next paper, proximity boost, bridge day after every paper
 - a **Study OS Card** you paste back next time — that's memory; the model has none
 
 Only the next 7 days are scheduled hour-by-hour. The rest of the runway is weekly targets. No 30-day fantasy timetable.
@@ -69,6 +70,7 @@ personalized-study-planner/
 
 - [`examples/maya-26-days-out.md`](./examples/maya-26-days-out.md) — what a first reply must look like
 - [`examples/ahmed-fsc-18-days.md`](./examples/ahmed-fsc-18-days.md) — tight-runway triage
+- [`examples/zainab-5-finals.md`](./examples/zainab-5-finals.md) — uni finals season: 5 papers, one shared plan, bridge days, proximity boost
 - [`examples/output-gallery.md`](./examples/output-gallery.md) — broken vs required, side by side
 
 ## Quality gate

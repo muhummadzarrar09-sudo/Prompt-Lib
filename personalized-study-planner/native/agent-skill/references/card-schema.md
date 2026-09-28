@@ -12,8 +12,8 @@ Codes and formulas: `metrics.md`.
 # STUDY OS CARD
 Date: YYYY-MM-DD
 Student:
-Exam:
-Exam date:
+Exam(s): (single exam, or one per line: name — date)
+Next paper: (name + date — DAYS is measured to this)
 Days left:
 Format:
 Weekday time: ___ min (usually HH:MM–HH:MM)

@@ -23,7 +23,7 @@ The reply is broken if any of these is true:
 - It opens with a pep paragraph or “sure, here’s a study plan”
 - TODAY has no `- [ ]` checkboxes
 - SETUP has no **3 non-negotiables** and no **do not open** list
-- SETUP/WEEKLY command center is missing LOAD, WCOV, or NEXT_PROBE
+- SETUP/WEEKLY command center is missing LOAD, WCOV, or NEXT_PROBE (or misses NEXT when multiple exams share the window
 - A block says “revise” / “go over” / “study chapter” with no observable done-line
 - There is no number to score (`__/n` questions or `__/n` from memory)
 - It hourly-schedules past 7 days
@@ -37,6 +37,7 @@ Four to ten lines. This is what they screenshot and send to a friend.
 ```
 COMMAND CENTER
 Exam: {name}  |  {date}  |  DAYS={n}
+NEXT: {next exam} {date}  (only when other exams share the window)
 Clock: Twd={min} weekday  /  weekend={..}
 BANK={h}h  NEED={h}h  LOAD={x.xx}  {VERDICT}
 COV={n}%  WCOV={n}%  CAVG={x.x}  RED/AMBER/GREEN={a}/{b}/{c}

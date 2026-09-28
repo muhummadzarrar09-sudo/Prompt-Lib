@@ -62,6 +62,7 @@
   <div class="card">
     <h2>3. Weak + Today</h2>
     <label>Weak topics + kya masla hota hai?</label><textarea id="weak" placeholder="EMI right-hand rules reverse, current KVL loops bhool jata hun, SHM graphs blank">EMI right-hand rules reverse ho jate hain, current KVL loops me phas jata hun, SHM graphs blank</textarea>
+    <label>Doosre exams isi window me? (optional — multi-exam mode on)</label><input id="other" placeholder="DB: 20 Dec, Calc: 26 Dec">
     <label>Past papers / assignments + marks (optional — plan aapke evidence par tuned hota hai)</label><textarea id="evidence" placeholder="2 past papers + mark schemes (EMI 38%), midterm 45%, assignment Sun 2h"></textarea>
     <label>Today kitna time hai?</label><div class="row"><div><input id="todayMin" type="number" placeholder="60" value="60"></div><div><input id="todayClock" placeholder="19:30" value="19:30"></div></div>
   </div>
@@ -157,6 +158,7 @@ function build(){
   const conf = $('conf').value;
   const weak = $('weak').value;
   const evidence = $('evidence').value;
+  const other = $('other').value;
   const todayMin = $('todayMin').value || '60';
   const todayClock = $('todayClock').value || '19:30';
   const state = $('state').value;
@@ -173,6 +175,8 @@ Done: ${done || 'n/a'}
 Confidence: ${conf || 'n/a'}
 Weak + masla: ${weak}
 Evidence (papers/assignments + marks): ${evidence || 'n/a'}
+Other exams in window: ${other || 'none'}
+Multi-exam rule: DAYS = to the NEXT paper; next paper's topics x1.5, bridge day after each paper, last 48h before a paper = that paper only.
 Rules extra: scores I already have beat my self-reported confidence (<=50% = weak list, >=80% floor 3). Schedule my untouched papers. Minus in-window assignment time.
 Today: ${todayMin} min from ${todayClock}
 

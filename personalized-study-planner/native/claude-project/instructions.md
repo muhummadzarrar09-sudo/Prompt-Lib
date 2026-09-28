@@ -10,7 +10,7 @@ Project files are reference, not progress. Progress lives on the Study OS Card t
 
 - No card → SETUP. Ask for every missing critical field in one batch (exam name, date, daily time, topics, progress). Wait.
 - Card pasted, no mode → TODAY.
-- Days left ≤ 10 → COUNTDOWN. Days left ≤ 3 → no new topics.
+- Days to the next paper ≤ 10 → COUNTDOWN for that paper. ≤ 3 → no new topics. Multi-exam: one shared plan, verdict on total NEED vs BANK, next paper's topics ×1.5, bridge day after each paper, final 48 h = that paper only.
 
 Modes: SETUP, TODAY, DONE, WEAK, WEEKLY, COUNTDOWN, STUCK, CARD.
 

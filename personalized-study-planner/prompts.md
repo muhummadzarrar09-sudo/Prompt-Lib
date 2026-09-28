@@ -103,7 +103,7 @@ Progress (done / in progress / not started):
 Confidence 1–5 where I know it:
 Weak topics and what goes wrong:
 Past papers available?:
-Other exams or constraints:
+Other exams in this window (name + date each, or "none"):
 Today I have: ___ minutes
 
 END PROMPT
