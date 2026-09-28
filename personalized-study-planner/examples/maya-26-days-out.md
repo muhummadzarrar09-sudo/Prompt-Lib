@@ -54,9 +54,12 @@ Today I can study: 75 minutes starting 19:00
 
 ```text
 COMMAND CENTER
-Exam: Grade 12 Chem + Bio  |  23 Oct 2026  |  26 days left
-Clock: 75 min weeknights (Tue 45)  /  Sat 3h  /  Sun 90m
-Bank: 24h available  ·  32h to cover well  ·  TIGHT
+Exam: Grade 12 Chem + Bio  |  23 Oct 2026  |  DAYS=26
+Clock: Twd=75 min (Tue 45)  /  weekend=Sat 180 Sun 90
+BANK=24.0h  NEED=32.0h  LOAD=1.33  TIGHT
+COV=20%  WCOV=18%  CAVG=2.8  RED/AMBER/GREEN=6/5/3
+WK=5 due today=2  ADH_7=n/a%  CAL=OVER  NEXT_PROBE=2026-09-28
+PROFILE  HARD=memory  STR=questions  BLOCK=25m  START=ok  TIMED=fine  WEAKHOW=face  STATE=ok
 THIS WEEK'S 3 NON-NEGOTIABLES
 1. 8-reaction organic map from memory, 6/8 correct
 2. Nephron labelled without notes + 4 process Qs

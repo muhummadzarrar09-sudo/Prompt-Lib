@@ -26,7 +26,13 @@ If your assistant returns “Day 1–30: revise all chapters”, it ignored the 
 
 ## Do this now
 
-**Fastest (any app):**
+**60 seconds, no questions (phone):**
+
+1. Open any chat.
+2. Copy everything in [`60-SECOND.md`](./60-SECOND.md) (4-line intake only).
+3. Paste, fill 4 lines, send. You get a screenshot-able plan + TODAY ticks + card. Save card. Done.
+
+**2 minutes, better plan (any app):**
 
 1. Open ChatGPT, Claude, Gemini, or whatever you already use.
 2. Copy everything between `START PROMPT` and `END PROMPT` in [`STUDY-OS.md`](./STUDY-OS.md) — or the short version in [`QUICK-PROMPT.md`](./QUICK-PROMPT.md).

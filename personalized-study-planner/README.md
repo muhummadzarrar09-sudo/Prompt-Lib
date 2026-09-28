@@ -75,11 +75,19 @@ Behaviour is **model-agnostic** ([`core/`](./core)). Each product is taught in *
 
 ## 60-second start
 
-Prefer a native pack if you will use this until the exam ([Pick your model](#pick-your-model)). Otherwise:
+Three tiers — pick your time:
+
+**Tier 1 — 60 seconds, phone, no questions:** [`60-SECOND.md`](./60-SECOND.md) + 4-line intake in [`templates/60-second-intake.md`](./templates/60-second-intake.md). Instant plan + TODAY + card. No interrogation.
+
+**Tier 2 — 2 minutes:** [`QUICK-PROMPT.md`](./QUICK-PROMPT.md) (short prompt, still interrogates if thin).
+
+**Tier 3 — Full OS:** [`STUDY-OS.md`](./STUDY-OS.md) or native pack if you will use this until exam ([Pick your model](#pick-your-model)).
+
+Otherwise:
 
 1. Open any assistant.
-2. Copy everything between `START PROMPT` and `END PROMPT` in [`STUDY-OS.md`](./STUDY-OS.md) (short version: [`QUICK-PROMPT.md`](./QUICK-PROMPT.md)).
-3. Under it, paste whatever you have. Blank is allowed — it will interrogate.
+2. Copy everything between `START PROMPT` and `END PROMPT` in [`STUDY-OS.md`](./STUDY-OS.md) (Tier 1: [`60-SECOND.md`](./60-SECOND.md), Tier 2: [`QUICK-PROMPT.md`](./QUICK-PROMPT.md)).
+3. Under it, paste whatever you have. Blank is allowed — it will interrogate (Tier 1 assumes and labels ASSUMED).
 
 ```text
 Exam:
@@ -531,8 +539,17 @@ Recommended:
 | [START-HERE.md](./START-HERE.md) | Two-minute front door if someone sent you this |
 | [SHARE.md](./SHARE.md) | What to put in a DM / caption — not the git tree |
 | [README.md](./README.md) | This manual |
-| [QUICK-PROMPT.md](./QUICK-PROMPT.md) | Short paste-in prompt |
+| [60-SECOND.md](./60-SECOND.md) | **60-second instant — 4-line intake, no questions, phone-first** |
+| [QUICK-PROMPT.md](./QUICK-PROMPT.md) | Short paste-in prompt (2 min) |
 | [STUDY-OS.md](./STUDY-OS.md) | Full paste-in system prompt |
+
+### Eval (quality gate)
+
+| File | What it is |
+|---|---|
+| [eval/README.md](./eval/README.md) | How to run the gate |
+| [eval/eval.py](./eval/eval.py) | Checks COMMAND CENTER, LOAD/WCOV, 3 non-negotiables, checkboxes, __/n, card, no 30-day calendar, no pep |
+| [eval/fixtures/](./eval/fixtures/) | good-minimal.md (should PASS), bad-pep-calendar.md / bad-no-metrics.md (should FAIL) |
 
 ### Core (edit behaviour here)
 
@@ -564,12 +581,14 @@ See [Pick your model](#pick-your-model). Each folder has a README with install s
 | [prompts/6-fell-behind.md](./prompts/6-fell-behind.md) | Plan is fiction |
 | [prompts/7-probe.md](./prompts/7-probe.md) | Scored diagnostic |
 | [prompts/8-profile.md](./prompts/8-profile.md) | What’s hard / what works / tonight’s state |
+| [prompts/9-instant.md](./prompts/9-instant.md) | 60-second instant, no questions |
 
 ### Templates (Notes / Notion / Docs)
 
 | File | When |
 |---|---|
 | [templates/intake.md](./templates/intake.md) | Fill before the first chat |
+| [templates/60-second-intake.md](./templates/60-second-intake.md) | **4-line intake for 60-SECOND.md** |
 | [templates/study-os-card.md](./templates/study-os-card.md) | Save file |
 | [templates/today-session.md](./templates/today-session.md) | Tick list if the chat is closed |
 | [templates/metrics-dashboard.md](./templates/metrics-dashboard.md) | Trend table |
@@ -639,6 +658,14 @@ A reply is **broken** (throw away, redo) if any of these is true:
 - Invented syllabus topics
 - Fake 0s instead of `n/a`
 
+**Automated gate:** `python eval/eval.py <file.md>` — same checks as above + fixtures. See [`eval/README.md`](./eval/README.md). Use in CI.
+
+```bash
+python eval/eval.py examples/maya-26-days-out.md
+python eval/eval.py eval/fixtures/good-minimal.md  # should PASS
+python eval/eval.py eval/fixtures/bad-*.md         # should FAIL
+```
+
 ---
 
 ## FAQ
@@ -674,6 +701,7 @@ personalized-study-planner/
 ├── START-HERE.md
 ├── SHARE.md
 ├── README.md                 ← you are here
+├── 60-SECOND.md              ← 60s instant, 4-line intake
 ├── QUICK-PROMPT.md
 ├── STUDY-OS.md
 ├── core/
@@ -685,9 +713,10 @@ personalized-study-planner/
 │   ├── output-spec.md
 │   ├── card-schema.md
 │   └── priority-and-time.md
-├── native/                   ← one pack per product
-├── prompts/                  ← 0 interrogate … 7 probe
-├── templates/
+├── eval/                     ← quality gate: eval.py + fixtures
+├── native/                   ← one pack per product (incl. ollama Modelfile + Modelfile.7b)
+├── prompts/                  ← 0 interrogate … 9 instant
+├── templates/                ← includes 60-second-intake.md
 └── examples/
 ```
 
