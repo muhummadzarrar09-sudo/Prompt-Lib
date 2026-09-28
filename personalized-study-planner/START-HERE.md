@@ -1,41 +1,56 @@
 # Start here
 
-You were given a study coach. Not another “30-day timetable” prompt. Two minutes.
+You were given a study coach. Not another “30-day timetable” prompt. 30 seconds.
+
+## For Instagram followers (you're here from Instagram? start here)
+
+**No GitHub reading. No LOAD/WCOV jargon.**
+
+1. Open this on phone: [`tools/study-os-builder.html`](./tools/study-os-builder.html) — fill form, tap Generate, Copy
+2. Or copy prompt from [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md) (friendly, Urdu mix ok)
+3. Paste in ChatGPT / Gemini / Meta AI (WhatsApp)
+4. Fill 4 lines: exam, date, time, weak
+5. You get screenshot-able plan + TODAY ticks + card. Save card in Notes.
+
+Full guide: [`FOR-INSTAGRAM.md`](./FOR-INSTAGRAM.md) + DM kit: [`instagram/DM-KIT.md`](./instagram/DM-KIT.md)
+
+**WhatsApp pe?** Use [`whatsapp-friendly.md`](./whatsapp-friendly.md) — no tables, simple lists.
 
 ## What you will actually get
 
 Not a speech. A screen you can screenshot:
 
 ```text
-COMMAND CENTER
-Exam: Chemistry + Bio  |  23 Oct  |  26 days left
-Clock: 75 min weeknights  /  Sat 3h
-Bank: 24h available  ·  32h to cover well  ·  TIGHT
-THIS WEEK'S 3 NON-NEGOTIABLES
-1. 8-reaction organic map from memory, 6/8
-2. Nephron labelled without notes
-3. Hormones 12-row table closed-book
-DO NOT OPEN THIS WEEK
-- Ecology notes
-- Rewriting bonding
+📚 FSc Physics | 15 Oct | 18 din rehte hain
+⏰ Tumhare pas: 14h | Chahiye: 20h → Time tight hai
+
+🔥 Is hafte ke 3 kaam:
+1. EMI: 8 situations 6/8
+2. Current: 3 KVL loops
+3. SHM: graphs + 4 MCQ
+
+🚫 Is hafte ye mat kholo:
+- Kinematics notes (already done)
 ```
 
-Then a **tick list for today** with a score on every block (`__/8`), a fallback if the evening dies, and a **Study OS Card** you paste back tomorrow. Weak topics stay on a drill list until you can actually do them.
+Then a **tick list for today** with a score on every block (`__/8`), a fallback if evening dies, and a **Study OS Card** you paste back tomorrow.
 
-If your assistant returns “Day 1–30: revise all chapters”, it ignored the coach. New chat, paste the prompt again.
+If assistant returns “Day 1–30: revise all chapters”, it ignored coach. New chat, paste prompt again.
 
-## Do this now
+## Do this now (3 tiers)
 
-**60 seconds, no questions (phone):**
+**Tier 0 — Instagram, 30 sec, most friendly:**
+- Tool: [`tools/study-os-builder.html`](./tools/study-os-builder.html) → Generate → Copy → ChatGPT
+- Or prompt: [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md)
 
+**Tier 1 — 60 seconds, no questions (phone):**
 1. Open any chat.
 2. Copy everything in [`60-SECOND.md`](./60-SECOND.md) (4-line intake only).
-3. Paste, fill 4 lines, send. You get a screenshot-able plan + TODAY ticks + card. Save card. Done.
+3. Paste, fill 4 lines, send.
 
-**2 minutes, better plan (any app):**
-
-1. Open ChatGPT, Claude, Gemini, or whatever you already use.
-2. Copy everything between `START PROMPT` and `END PROMPT` in [`STUDY-OS.md`](./STUDY-OS.md) — or the short version in [`QUICK-PROMPT.md`](./QUICK-PROMPT.md).
+**Tier 2 — 2 minutes, better plan:**
+1. Open ChatGPT, Claude, Gemini.
+2. Copy START to END in [`STUDY-OS.md`](./STUDY-OS.md) or short [`QUICK-PROMPT.md`](./QUICK-PROMPT.md)
 3. Under it, paste:
 
 ```text
@@ -45,24 +60,21 @@ Weekdays: ___ min    Weekends: ___
 Topics / syllabus:
 Done so far:
 Weak topics (and what goes wrong):
-Hardest part of studying + what I do when it actually works:
-Timed papers: freeze / rush / fine
-Block I can finish: 15 / 25 / 40 / 60
 State today: low / ok / wired / fried / anxious
 Today I can study: ___ minutes from ___
 ```
 
-4. If it sends a numbered question batch, answer it. That is interrogation — it is how the metrics (LOAD, WCOV, next probe) get real. Two rounds max.
-5. Save the **Study OS Card** it prints. That is your save file. Notes app is fine.
+4. If it asks numbered batch, answer it. That's interrogation — 2 rounds max.
+5. Save **Study OS Card** in Notes.
 
-**If you will use this until the exam** (better): open [`native/README.md`](./native/README.md) and install the pack for *your* app so you stop re-pasting the rulebook.
+**If you will use until exam:** open [`native/README.md`](./native/README.md) and install pack for your app.
 
 | App | Open |
 |---|---|
-| ChatGPT | [`native/chatgpt`](./native/chatgpt) |
-| Claude | [`native/agent-skill`](./native/agent-skill) or [`native/claude-project`](./native/claude-project) |
+| ChatGPT / Meta AI / WhatsApp | [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md) or [`whatsapp-friendly.md`](./whatsapp-friendly.md) |
+| Claude | [`native/agent-skill`](./native/agent-skill) |
 | Gemini | [`native/gemini-gem`](./native/gemini-gem) |
-| Anything else | [`native/README.md`](./native/README.md) |
+| Dynamic chat (step-by-step) | [`dynamic/CHAT-FLOW.md`](./dynamic/CHAT-FLOW.md) |
 
 ## Every study day after that
 
@@ -78,19 +90,19 @@ When you stop:
 DONE — minutes:    scores:    shaky:
 ```
 
-If it prints `PROBE`, close the notes, answer, then:
+If it prints `PROBE`, close notes, answer, then:
 
 ```text
 PROBE RESULT · topic · __/5 · minutes · which were wrong
 ```
 
-Once a week: `WEEKLY`. Ten days out: it should switch to papers by itself. Fell off: `STUCK`. Type `METRICS` if you only want the numbers.
+Once a week: `WEEKLY`. Ten days out: papers. Fell off: `STUCK`. Shareable screenshot: `SHARE`.
 
 ## What “good” looks like
 
-[`examples/output-gallery.md`](./examples/output-gallery.md) — garbage plan vs this.  
-[`examples/maya-26-days-out.md`](./examples/maya-26-days-out.md) — a full first reply.
+[`examples/output-gallery.md`](./examples/output-gallery.md) — garbage vs good.
+[`examples/maya-26-days-out.md`](./examples/maya-26-days-out.md) — full reply.
 
-## Sending this to someone else
+## Sending to someone else
 
-Use [`SHARE.md`](./SHARE.md). Don’t dump the whole git tree in their DMs — send START-HERE + the prompt.
+Use [`FOR-INSTAGRAM.md`](./FOR-INSTAGRAM.md) or [`SHARE.md`](./SHARE.md). Don't dump git tree — send Student Edition link + 4 lines.

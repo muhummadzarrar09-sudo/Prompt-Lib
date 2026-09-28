@@ -1,10 +1,11 @@
 # Personalized Study Planner (Study OS)
 
 **If someone sent you this folder, open [START-HERE.md](./START-HERE.md) first.**  
-Sending it on: [SHARE.md](./SHARE.md).  
+**Instagram / Student? Open [STUDENT-FRIENDLY.md](./STUDENT-FRIENDLY.md) or [FOR-INSTAGRAM.md](./FOR-INSTAGRAM.md) — 30 sec, no jargon, Urdu mix ok, WhatsApp friendly. Web builder: [tools/study-os-builder.html](./tools/study-os-builder.html)**  
+Sending it on: [SHARE.md](./SHARE.md) / [FOR-INSTAGRAM.md](./FOR-INSTAGRAM.md)  
 What a good reply looks like: [examples/output-gallery.md](./examples/output-gallery.md).
 
-This README is the full manual — metrics, interrogation, **learner profile (mental state / what’s hard / what’s a strength)**, diagnostic intervals, modes, output, files, native packs, loops, failure modes. The coach itself lives in [`core/`](./core). Native install packs live in [`native/`](./native).
+This README is the full manual — metrics, interrogation, **learner profile (mental state / what’s hard / what’s a strength)**, diagnostic intervals, modes, output, files, native packs, loops, failure modes. The coach itself lives in [`core/`](./core). Native install packs live in [`native/`](./native). Student Edition lives in [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md).
 
 ---
 
