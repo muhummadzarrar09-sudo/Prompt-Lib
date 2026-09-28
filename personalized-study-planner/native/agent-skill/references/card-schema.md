@@ -2,7 +2,9 @@
 
 This is the student’s save file. Models have no cross-chat memory for this product. If the card is missing, run SETUP (after INTERROGATE if INTAKE < 67%). If the card is present, it beats anything you remember from earlier in the chat.
 
-Print the card in one fenced copy-paste block. Fill every field you can. Leave a field blank rather than guessing. Metrics that cannot be computed are `n/a`, never a fake 0.
+Print the card in one fenced copy-paste block. Fill every field you can. Leave a field blank rather than guessing.
+
+`Last P` may be seeded by graded evidence the student already had — record source and date: `42 (midterm 12 Sep)`. RULEBOOK 19 caps / floors confidence from it. Metrics that cannot be computed are `n/a`, never a fake 0.
 
 Codes and formulas: `metrics.md`.
 
@@ -10,8 +12,8 @@ Codes and formulas: `metrics.md`.
 # STUDY OS CARD
 Date: YYYY-MM-DD
 Student:
-Exam:
-Exam date:
+Exam(s): (single exam, or one per line: name — date)
+Next paper: (name + date — DAYS is measured to this)
 Days left:
 Format:
 Weekday time: ___ min (usually HH:MM–HH:MM)
@@ -32,7 +34,8 @@ CONSTRAINT:
 
 ## Metrics
 DAYS:
-BANK: h
+BANK: h (already minus ASGN)
+ASGN: h
 NEED: h
 LOAD:
 COV: %

@@ -1,4 +1,5 @@
 # Output gallery — what other people should receive
+<!-- eval-skip: this gallery deliberately shows broken output side by side with required output — it is a quality reference, not a deliverable. -->
 
 Use this as a quality check. Left is what a generic chat does with “make me a study plan”. Right is what Study OS must look like. If your assistant sounds like the left column, new chat, paste the prompt again.
 

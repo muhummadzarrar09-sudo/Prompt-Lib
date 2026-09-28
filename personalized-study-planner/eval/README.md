@@ -32,6 +32,12 @@ python eval/eval.py /tmp/out.md
 # check all examples
 python eval/eval.py examples/maya-26-days-out.md examples/ahmed-fsc-18-days.md
 
+# full suite: fixtures + examples. bad-* fixtures must fail, good must pass
+python eval/eval.py --selftest eval/fixtures/*.md examples/*.md
+
+# drift guard: agent-skill references/ must be exact copies of core/
+python eval/check_copies.py
+
 # strict mode — also fails on ASSUMED without label, fake 0s
 python eval/eval.py --strict /tmp/out.md
 
@@ -48,8 +54,21 @@ Exit code 0 = PASS, 1 = FAIL.
 - `fixtures/bad-no-metrics.md` — missing LOAD/WCOV (should FAIL)
 
 ```bash
-python eval/eval.py fixtures/good-minimal.md
-python eval/eval.py fixtures/bad-*.md
+python eval/eval.py --selftest eval/fixtures/*.md examples/*.md
+```
+
+A file can opt out of the gate with `eval-skip` in its first lines — used by `examples/output-gallery.md`, which deliberately contains broken output as a reference.
+
+## Use in other Prompt-Lib use cases
+
+Copy this folder, edit `CHECKS` in `eval.py`. Same pattern: command center + tick list + card = memory.
+
+## CI idea
+
+```yaml
+# .github/workflows/study-os.yml
+- run: python personalized-study-planner/eval/eval.py --selftest personalized-study-planner/eval/fixtures/*.md personalized-study-planner/examples/*.md
+- run: python personalized-study-planner/eval/check_copies.py
 ```
 
 ## Use in other Prompt-Lib use cases

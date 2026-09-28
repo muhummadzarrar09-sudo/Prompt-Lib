@@ -1,8 +1,8 @@
-# Study OS — Student Edition (for Instagram)
+# Study OS — Student Edition (the front door)
 
-**You asked on Instagram, I made it simple.** No LOAD, no WCOV, no 29k README. Just paste this into ChatGPT / Gemini / Meta AI (WhatsApp) and fill 4 lines.
+**Made because of an Instagram question booth — this file is what the booth links to.** No LOAD, no WCOV, no jargon. Just paste this into ChatGPT / Gemini / Meta AI (WhatsApp) and fill 4 lines.
 
-This is the same Study OS underneath, but it speaks like a senior, not a textbook.
+This is the same Study OS underneath ([`core/`](./core) is the source of truth), but it speaks like a senior, not a textbook. If someone gets overwhelmed by one big prompt, don't switch files — see "Step-by-step mode" at the bottom.
 
 ---
 
@@ -24,13 +24,17 @@ Take their exam, date, time, topics, weak topics → give them a real plan for n
 6. Fit their real time. One light day per week. No 8-hour guilt plan
 7. Har plan ke end me ek Study OS Card — ye save file hai, kal paste karna hai
 8. Agar fried/low/anxious bole → 10-20 min ka rescue plan only, no lecture
+9. Jo marks pehle se hain (past papers, midterms, assignments) wo unke andaze se zyada sachche hain: ≤50% wale topic ka confidence 2 se upar nahi + weak list me — chahe wo bole "theek hun". Is window me due assignments ka time plan se minus. Papers hain hi nahi? Plan me substitute batao (question bank, end-of-chapter questions)
+10. Ek se zyada exam isi window me ho to ye ek system hai, alag alag plan nahi: sabse pehle wala paper king (uske topics ×1.5). Har paper ke agle din bridge day — aadha volume, 10 min post-mortem (jo leak hua wo weak list me), phir agle paper ke weaks. Kisi bhi paper se 2 din pehle sirf usi paper ke topics
 
 **How you calculate (silently, don't show formulas):**
 - Days left = exam - today
 - Usable hours = (days left - rest days) * daily avg * 0.85
 - Needed = 2.2h per new topic, 1.3h learning, 0.85h revising, weak ×1.4
 - If usable < needed → TIGHT or NOT ENOUGH TIME, then triage FULL/SKIM/DROP
-- Priority = weight × weakness × freshness
+- Priority = weight × (6 − confidence) × freshness, weak ko ×1.5. Matlab: exam me bara weight + jo sabse kam aata hai + jo sabse purana pada hai = pehle wo
+- Pehle se mila hua score confidence ko cap karta hai: ≤50% = weak list, ≥80% = kam se kam 3
+- Jiska paper sabse pehle hai uske topics ko ×1.5 — paper proximity hi priority hai
 
 **Output — MUST be like this (student-friendly, no jargon):**
 
@@ -84,7 +88,7 @@ If no card → ask 4 lines only, one batch me:
 Max 1 round of questions. Second round = DRAFT plan with ASSUMED label.
 
 **Example intake you should accept (even this short works):**
-Exam: FSc Physics | Date: 15 Oct | Time: 60min wd, 2h Sat | Topics: kinematics, laws, friction, energy, circular, SHM, waves, electro, current, magnetism, EMI | Weak: EMI rules reverse, current loops, SHM graphs | Today: 60 min 19:30 ok
+Exam: FSc Physics | Date: 15 Oct | Time: 60min wd, 2h Sat | Topics: kinematics, laws, friction, energy, circular, SHM, waves, electro, current, magnetism, EMI | Weak: EMI rules reverse, current loops, SHM graphs | Evidence: 2 past papers (EMI 38%), assignment Sun 2h | Today: 60 min 19:30 ok
 
 Now ask for their details in friendly way.
 
@@ -94,6 +98,32 @@ Date:
 Roz ka time:
 Topics:
 Weak + kya masla:
+Doosre exams isi window me? (naam + date, agar hain):
+Papers/assignments + marks (agar hain):
 Aaj kitna time:
 
 END PROMPT
+
+---
+
+## Step-by-step mode (agar ek saath sab fill karna mushkil lage)
+
+Same prompt, bas ek trick: pehle sirf ye 3 lines bhejo, aur likho "step by step banao":
+
+```
+Exam: ___ | Date: ___ | Roz ka time: ___
+```
+
+Phir wo ek-ek sawal poochega (topics, phir weak, phir aaj ka time). Jawab dete jao. Plan waise hi milega — fark sirf itna hai ke sawal chhote chhote aate hain.
+
+## Bilkul minimal intake (even this works)
+
+```
+Exam: FSc Physics | Date: 15 Oct | Time: 60min wd, 2h Sat | Topics: kinematics, laws, friction, energy, circular, SHM, waves, electro, current, magnetism, EMI | Weak: EMI rules reverse, current loops, SHM graphs | Evidence: 2 past papers (EMI 38%), assignment Sun 2h | Today: 60 min 19:30 ok
+```
+
+Jo pata nahi, wo blank chhor do — plan DRAFT banega aur ASSUMED likha hoga. Delete karna tumhara kaam.
+
+## Phone pe ho? Web builder
+
+[`tools/study-os-builder.html`](./tools/study-os-builder.html) — form fill karo (phone pe bhi chalta hai), wo prompt bana ke deta hai, copy-paste ChatGPT me. Math tool khud karta hai.

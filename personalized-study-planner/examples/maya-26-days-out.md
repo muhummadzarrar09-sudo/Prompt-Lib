@@ -44,7 +44,9 @@ Bonding 4, moles 3, acids 4, rates 2, organic mechanisms 1, electrochemistry 1
 Cells 4, enzymes 4, photosynthesis 3, digestion 3, circulation 3, breathing 3, nerves 2, hormones 1, nephron 1, Mendel 3, meiosis 2, protein synthesis 2, ecology 5
 
 Weak: organic mechanisms (I never know which reaction), nephron (blank), hormones (mix up who secretes what), meiosis (mix with mitosis), rates calculations
-Past papers: yes, 4 papers + mark schemes
+Past papers: yes, 4 papers + mark schemes, none attempted yet
+Recent evidence: midterm 61% overall — organic mechanisms section 28%, rates calculations 45%; enzymes class test 9/10; nephron homework 6/15
+Assignments due before the exam: Bio field sketch Sunday (≈2h)
 Today I can study: 75 minutes starting 19:00
 ```
 

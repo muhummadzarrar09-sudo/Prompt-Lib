@@ -1,79 +1,68 @@
-# For Instagram Followers — 30 Second Start
+# Instagram booth kit — the only ops file you need
 
-**Link in bio → this file.** No GitHub reading needed.
+This project started as an Instagram question booth. This file is how you run it: what to link, what to DM, what to post. Everything else student-facing lives in [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md).
 
-### 1. Copy this prompt (Student Edition)
+## The one link you hand out
 
-Open ChatGPT / Gemini / Meta AI (WhatsApp pe bhi chalega):
+→ [`STUDENT-FRIENDLY.md`](./STUDENT-FRIENDLY.md) — paste into ChatGPT / Gemini / Meta AI (WhatsApp chalta hai), 4 lines fill karo, plan ready.
 
-→ Copy everything from `STUDENT-FRIENDLY.md` → START PROMPT to END PROMPT
+Overwhelmed users → point them at the same file's **Step-by-step mode** section. Phone users → [`tools/study-os-builder.html`](./tools/study-os-builder.html).
 
-### 2. Paste + fill 4 lines
+## DM templates
 
-```
-Exam: FSc Physics
-Date: 15 Oct 2026
-Roz ka time: 60 min weekdays 19:30, Sat 2h
-Topics: kinematics, laws, friction, energy, circular, SHM, waves, electro, current, magnetism, EMI
-Weak: EMI rules reverse, current loops, SHM graphs blank
-Aaj: 60 min from 19:30, state ok
-```
-
-Even shorter works:
+**DM 1 — first contact ("planner chahiye")**
 
 ```
-Exam: FSc Physics | Date: 15 Oct | Time: 60min wd 2h Sat | Topics: kinematics, laws, friction, energy, circular, SHM, waves, electro, current, magnetism, EMI | Weak: EMI, current, SHM | Today: 60min 19:30 ok
-```
+Yaar ye wala try karo — 30 sec me plan ban jata hai, 30-day wala fantasy nahi
 
-### 3. You get
-
-- 📚 Command center: kitne din, kitna time hai, time tight hai ya ok
-- 🔥 3 kaam is hafte pakke
-- 🚫 Kya nahi kholna
-- 7 din ka plan (one job per day)
-- TODAY ticks with __/n score
-- Card — ye save kar lo Notes me
-
-### 4. Kal kya karna hai?
-
-Card paste karo + likho:
-
-```
-TODAY 60 min from 19:30
-```
-
-Jab khatam ho:
-
-```
-DONE minutes: 60 scores: EMI 6/8 SHM 2/3 shaky: KVL
-```
-
-### 5. Story pe share karna hai?
-
-Type `SHARE` — it gives you screenshot version without card. Perfect for story.
-
-### 6. Tools (no install)
-
-- **Web Builder:** Open `tools/study-os-builder.html` in browser (phone pe bhi). Fill form → copy prompt → paste in ChatGPT. No math needed, tool calculates days/hours.
-- **WhatsApp:** Use `whatsapp-friendly.md` — no tables, simple lists, works on Meta AI
-- **Dynamic Chat:** `dynamic/CHAT-FLOW.md` — if you want step-by-step questions, not one big prompt
-
-### DM Template for you to send followers
-
-```
-Study OS — jo actually kaam karta hai, 30-day fantasy nahi
-
-1. ChatGPT kholo
+1. ChatGPT / Gemini / Meta AI kholo
 2. Ye prompt copy karo: [link to STUDENT-FRIENDLY.md]
-3. 4 lines fill karo: exam, date, time, weak
+3. Neeche 4 lines fill karo:
+Exam:
+Date:
+Time:
+Weak:
+(Papers ya assignments ke marks hain to wo bhi — plan aur accurate hoga)
 
 Tumhe milega: 7 din ka real plan + aaj ke ticks + card jo kal paste karna hai
 
-Link: github.com/muhummadzarrar09-sudo/Prompt-Lib/tree/main/personalized-study-planner/STUDENT-FRIENDLY.md
-
-Try karo, DONE ka screenshot bhejo, main check kar dunga
+Bana ke screenshot bhejo, main dekh leta hun
 ```
 
-### Why no Ollama?
+**DM 2 — "samajh nahi aaya"**
 
-Kyunki koi Ollama pe nahi parhta lol. Ye ChatGPT, Gemini, Meta AI (WhatsApp), Claude pe bana hai — jo tum roz use karte ho.
+```
+Ok short wala lo: STUDENT-FRIENDLY.md kholo, sirf pehle 3 lines bhejo
+(Exam | Date | Roz ka time) aur likho "step by step banao".
+
+Ya phone pe ye form fill karo, copy-paste ChatGPT me:
+[link to tools/study-os-builder.html]
+```
+
+**DM 3 — "time hi nahi hai"**
+
+```
+Same issue sab ka hai. Isi liye ye triage karta hai — batata hai kya chorna hai.
+Prompt me time kam likh do, jaise "30 min weekdays". Wo 30 min ka hi plan dega,
+3 ghante ka lecture nahi. Try karo: 30 min likh ke dekho kya deta hai
+```
+
+## Story / post
+
+- Story pe share karna hai? Plan ke end me `SHARE` type karo — screenshot version without card, no private data.
+- Caption:
+
+```
+30-day timetable jo day 3 pe marr jata hai? Nahi chahiye.
+
+Maine Study OS banaya hai — jo tumhare real time, weak topics, aur exam date se
+7 din ka plan banata hai + aaj ke ticks + card jo kal paste karna hai
+
+No jargon, seedhi zuban: "Time tight hai, ye 3 kaam pakke karne hain"
+
+Link in bio → STUDENT-FRIENDLY.md (ChatGPT / Gemini / WhatsApp pe chalta hai)
+
+Bana ke DONE ka screenshot bhejo, check kar dunga 👇
+
+#studyplanner #fsc #alevels #exam #studytips #pakistan
+```

@@ -10,14 +10,16 @@ A plan is a function of metrics. Interrogation exists to fill them. Diagnostics 
 
 | Code | Name | Formula | Unit |
 |---|---|---|---|
-| DAYS | Calendar days left | exam date − today (date only) | days |
+| DAYS | Days to next paper | nearest paper date (any exam in the window) − today; single exam unchanged | days |
+| NEXAM | Next paper | name + date of that nearest paper | name, date |
 | REST | Lighter days reserved | floor(DAYS / 7) | days |
 | BUF | Buffer days | 2 if DAYS ≥ 21, else 0 | days |
 | SDAYS | Study days | DAYS − REST − BUF (min 1) | days |
 | Twd | Weekday minutes | what they **actually** did last week, not the fantasy. If unknown, take what they typed and mark it ASSUMED | min |
 | Twe | Weekend minutes | same rule | min |
 | TAVG | Average daily minutes | (5×Twd + Twe_sat + Twe_sun) / 7 | min |
-| BANK | Usable hours | SDAYS × (TAVG/60) × 0.85 | hours, 1 decimal |
+| ASGN | Assignment tax | hours of assignments / labs / projects due inside the study window (P7). A deadline inside the window is not study time | hours, 1 decimal |
+| BANK | Usable hours | SDAYS × (TAVG/60) × 0.85 − ASGN | hours, 1 decimal |
 | NEED | Hours to cover well | sum of per-topic estimates (see below) | hours, 1 decimal |
 | LOAD | Load ratio | NEED / BANK | 2 decimals |
 | VERDICT | Capacity verdict | LOAD ≤ 1.00 ON TRACK; 1.01–1.25 TIGHT; > 1.25 NOT ENOUGH TIME | enum |
@@ -27,6 +29,7 @@ Per-topic NEED hours:
 | Topic state | Hours |
 |---|---|
 | Not started | 2.2 (use 1.5 if they are fast / short topic, 3.0 if heavy) |
+| Uni course-unit, lecture-based | 3.0 (2.0 short unit, 5.0 heavy / problem-heavy) |
 | Learning | 1.3 |
 | Revising | 0.85 |
 | Exam-ready | 0.2 (maintenance) |
@@ -61,7 +64,11 @@ WCOV is the coverage number that matters. COV lies when they “finished” thre
 | WSTREAK | Best current streak | max streak on active weaks | integer |
 | WPROMO_7 | Promoted in last 7 days | count |
 
-Priority still uses: `P = Weight × (6 − confidence) × Freshness × 1.5 if weak`.
+Priority: `P = Weight × (6 − confidence) × Freshness × Weak(1.5) × PROX`.
+
+| Code | Name | Rule |
+|---|---|---|
+| PROX | Proximity boost | ×1.5 the topic's exam is the next paper, ×1.25 the one after, ×1.0 otherwise (single exam: always ×1.0) |
 
 Freshness: 1 if practiced ≤ 7d, 2 if 8–21d, 3 if never or > 21d.
 
@@ -90,6 +97,8 @@ Map confidence → expected probe %:
 | NEXT_PROBE | Next diagnostic due | from the interval table | date |
 
 OVER topics get an extra probe next session even if the student feels fine. UNDER topics can skip a re-teach and go to mixed questions.
+
+At intake, graded work the student already has seeds this family: a midterm, quiz, or marked assignment score counts as P with source and date (`Last P: 42 (midterm 12 Sep)`), and RULEBOOK 19 caps / floors confidence accordingly. Probes keep it honest after that. Evidence they walk in with is never thrown away.
 
 On DONE: if they report a score, recompute CAL and **move confidence toward the evidence**, not toward their mood. One step per probe (4→3 if they scored 40% etc). Never jump 5→1 on one quiz unless they asked to.
 
@@ -133,6 +142,7 @@ MISS topics become weaks with symptom “leaked on paper {date}”.
 |---|---|---|
 | INTAKE | Completeness | must-haves filled / 6 | 0–100% |
 | Must-haves | exam name, exam date, Twd/Twe, topic list, progress, confidence | |
+| Must-haves (multi-exam) | every exam's name + date when more than one shares the window | |
 | Nice-to-haves | format, weights, past papers, other exams, dead days, method that works, last real scores | |
 
 Do not lock a plan at INTAKE < 67% (fewer than 4/6) unless they explicitly said “draft it anyway”. Label it DRAFT.

@@ -20,7 +20,7 @@ from pathlib import Path
 # --- checks ---
 
 def check_command_center(text: str):
-    # must appear near top (first 1500 chars)
+    # must appear near top (first 2000 chars)
     head = text[:2000].upper()
     has_cc = "COMMAND CENTER" in head
     return has_cc, "Missing COMMAND CENTER in first 2000 chars"
@@ -69,11 +69,9 @@ def check_non_negotiables(text: str):
     m = re.search(r"NON-NEGOTIABLES?(.*?)DO NOT OPEN", text, re.IGNORECASE | re.DOTALL)
     block = m.group(1) if m else text
     nums = len(re.findall(r"^\s*[1-3]\.\s+", block, re.MULTILINE))
-    if nums < 3:
-        # also accept dash list
-        dashes = len(re.findall(r"^\s*[-*]\s+", block, re.MULTILINE))
-        if dashes < 3 and nums < 2:
-            return False, f"Found NON-NEGOTIABLES header but <3 items (found {nums})"
+    dashes = len(re.findall(r"^\s*[-*]\s+", block, re.MULTILINE))
+    if nums + dashes < 3:
+        return False, f"Found NON-NEGOTIABLES header but <3 items (found {nums + dashes})"
     return True, "ok"
 
 def check_do_not_open(text: str):
@@ -206,6 +204,9 @@ STRICT_CHECKS = [
 
 def evaluate_file(path: Path, strict=False):
     text = path.read_text(encoding="utf-8", errors="ignore")
+    # files can opt out with a marker (e.g. examples that deliberately contain broken output)
+    if "eval-skip" in text[:400].lower():
+        return True, [{"check": "skip-marker", "pass": True, "msg": "skipped by eval-skip marker"}]
     results = []
     all_pass = True
     checks = CHECKS + (STRICT_CHECKS if strict else [])
@@ -224,6 +225,9 @@ def main():
     parser.add_argument("files", nargs="+", help="markdown files to check")
     parser.add_argument("--json", action="store_true", help="output JSON")
     parser.add_argument("--strict", action="store_true", help="enable strict checks")
+    parser.add_argument("--selftest", action="store_true",
+                        help="invert expectations for files named bad-*: they must FAIL. "
+                        "Good files and eval-skip files must pass. Exit 0 = checker works.")
     args = parser.parse_args()
 
     overall_pass = True
@@ -236,6 +240,11 @@ def main():
             overall_pass = False
             continue
         passed, results = evaluate_file(p, strict=args.strict)
+        if args.selftest and p.name.startswith("bad-"):
+            # negative fixture: must fail, passing is a checker bug
+            passed = not passed
+            if results and results[0]["check"] == "skip-marker":
+                passed = False
         report[str(p)] = {"pass": passed, "checks": results}
         if not passed:
             overall_pass = False

@@ -8,7 +8,7 @@ Do not paste a Custom GPT blob into Claude, and do not paste a SKILL.md into a G
 
 | You are using | Open this | Native format |
 |---|---|---|
-| Any chat (paste once) | [any-chat](./any-chat) | System / first message |
+| Any chat (paste once) | [STUDY-OS.md](../STUDY-OS.md) | System / first message |
 | ChatGPT Custom GPT | [chatgpt](./chatgpt) | Name, description, instructions, starters, knowledge files |
 | ChatGPT Project | [chatgpt](./chatgpt#chatgpt-project) | Project instructions + files |
 | Claude Skill, Claude Code, Codex, Copilot, Cursor, Gemini CLI, and anything that reads `SKILL.md` | [agent-skill](./agent-skill) | [Agent Skills](https://agentskills.io) `SKILL.md` |
@@ -19,7 +19,7 @@ Do not paste a Custom GPT blob into Claude, and do not paste a SKILL.md into a G
 | Poe bot | [poe](./poe) | Bot prompt + greeting |
 | Ollama / local models | [ollama](./ollama) | `Modelfile` SYSTEM |
 
-If a new chat product appears and it has no skill format, use [any-chat](./any-chat). If it supports Agent Skills, drop in [agent-skill](./agent-skill).
+If a new chat product appears and it has no skill format, paste [STUDY-OS.md](../STUDY-OS.md). If it supports Agent Skills, drop in [agent-skill](./agent-skill).
 
 ## What “native” means here
 
@@ -38,4 +38,4 @@ Each pack is rewritten for that product’s instruction box, not find-and-replac
 
 1. Change behaviour in `core/`.
 2. Re-upload knowledge files for GPT / Gem / Claude Project.
-3. If you changed a hard rule, also update `agent-skill/SKILL.md` (it inlines the procedure) and the system-prompt packs (Grok, Poe, Ollama, any-chat).
+3. If you changed a hard rule, also update `agent-skill/SKILL.md` (it inlines the procedure) and the system-prompt packs (Grok, Poe, Ollama). Keep `agent-skill/references/` byte-identical to core — `eval/check_copies.py` checks.
