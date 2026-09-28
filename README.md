@@ -6,17 +6,21 @@ A library of practical prompts and mini-systems. Behaviour is **model-agnostic**
 
 | Folder | What it does |
 |---|---|
-| [personalized-study-planner](./personalized-study-planner) | Personalized exam study plan from syllabus, exam date, daily time, and progress. Tracks weak topics. **People receiving this:** [`START-HERE.md`](./personalized-study-planner/START-HERE.md). **Builders:** [`native/`](./personalized-study-planner/native). |
+| [personalized-study-planner](./personalized-study-planner) | Personalized exam study plan. **Instagram / Student Edition:** [`STUDENT-FRIENDLY.md`](./personalized-study-planner/STUDENT-FRIENDLY.md) — plain English/Urdu, no jargon, WhatsApp friendly. **Web builder:** [`tools/study-os-builder.html`](./personalized-study-planner/tools/study-os-builder.html) — fill form → copy → ChatGPT. **30s start:** [`FOR-INSTAGRAM.md`](./personalized-study-planner/FOR-INSTAGRAM.md). **People receiving this:** [`START-HERE.md`](./personalized-study-planner/START-HERE.md). |
 
 ## Pattern for every use case
 
 ```text
 use-case/
-├── core/      ← source of truth (rules, schemas)
-├── native/    ← one pack per product (GPT / Gem / SKILL.md / Modelfile / …)
-├── prompts/   ← optional small paste-in prompts
-├── templates/
+├── STUDENT-FRIENDLY.md  ← plain language edition (Instagram / WhatsApp)
+├── FOR-INSTAGRAM.md     ← DM kit + story templates
+├── tools/               ← dynamic web builder (no backend)
+├── core/                ← source of truth (rules, schemas)
+├── native/              ← one pack per product
+├── prompts/             ← modular prompts
+├── templates/           ← 60-second intake etc
+├── eval/                ← quality gate
 └── examples/
 ```
 
-More use cases get their own folder in that pattern.
+Study OS is the reference implementation — Student Edition is what you share on Instagram, core/ is what builders edit.

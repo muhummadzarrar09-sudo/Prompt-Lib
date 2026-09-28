@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study OS Builder — 60 sec plan</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1e26; --accent:#7c5cff; --accent2:#2dd4bf; --text:#e6e8ec; --muted:#9aa0a6; --red:#ff6b6b; --green:#51cf66; --amber:#fcc419; }
+  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.5}
+  .wrap{max-width:720px;margin:0 auto;padding:20px}
+  h1{font-size:28px;margin:8px 0} h2{font-size:18px;margin:24px 0 8px;color:var(--accent2)}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border-radius:16px;padding:16px;margin:12px 0;border:1px solid #252a36}
+  label{display:block;font-size:13px;color:var(--muted);margin:8px 0 4px}
+  input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3142;background:#12151c;color:var(--text);font-size:15px}
+  textarea{min-height:80px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  @media(max-width:600px){.row,.row3{grid-template-columns:1fr}}
+  button{background:var(--accent);color:white;border:0;padding:12px 18px;border-radius:12px;font-weight:600;cursor:pointer;font-size:15px}
+  button.secondary{background:#252a36;color:var(--text)}
+  button:active{transform:scale(0.98)}
+  .pill{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;background:#252a36;color:var(--muted);margin:2px}
+  .pill.red{background:#2a1a1a;color:var(--red)} .pill.green{background:#1a2a1a;color:var(--green)} .pill.amber{background:#2a251a;color:var(--amber)}
+  .out{white-space:pre-wrap;background:#0c0e12;border-radius:12px;padding:12px;font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow:auto;max-height:420px;border:1px solid #222}
+  .cmd{font-family:ui-monospace,monospace;background:#12151c;padding:12px;border-radius:12px;font-size:13px;white-space:pre-wrap}
+  .flex{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .badge{padding:6px 12px;border-radius:10px;background:#1e2330;font-size:13px}
+  .badge b{color:var(--accent2)}
+  .hidden{display:none}
+  a{color:var(--accent2);text-decoration:none}
+  .footer{margin:40px 0 20px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📚 Study OS Builder</h1>
+  <div class="sub">For Instagram — 60 sec me real plan. No LOAD/WCOV jargon. ChatGPT / Gemini / WhatsApp pe chalta hai. <a href="../STUDENT-FRIENDLY.md" target="_blank">Student Edition prompt →</a></div>
+
+  <div class="card">
+    <h2>1. Exam</h2>
+    <div class="row">
+      <div><label>Exam name</label><input id="exam" placeholder="FSc Physics" value="FSc Physics"></div>
+      <div><label>Exam date</label><input id="date" type="date"></div>
+    </div>
+    <div class="row">
+      <div><label>Weekday minutes</label><input id="twd" type="number" placeholder="60" value="60"></div>
+      <div><label>Weekend minutes (Sat+Sun total)</label><input id="twe" type="number" placeholder="150" value="150"></div>
+    </div>
+    <label>Usual time (optional)</label><input id="clock" placeholder="19:30-20:30 weekdays, Sat 10:00">
+    <label>State today</label>
+    <select id="state"><option value="ok">ok — normal</option><option value="low">low — thoda low</option><option value="fried">fried — bilkul thak gaya</option><option value="anxious">anxious — tension ho rahi</option><option value="wired">wired — hyper</option></select>
+  </div>
+
+  <div class="card">
+    <h2>2. Topics</h2>
+    <label>Topics (comma or new line)</label><textarea id="topics" placeholder="kinematics, laws + friction, work energy, circular, gravitation, SHM, waves, electrostatics, current, magnetism, EMI">kinematics, laws + friction, work energy, circular, gravitation, SHM, waves, electrostatics, current electricity, magnetism, EMI</textarea>
+    <label>Done so far (optional)</label><input id="done" placeholder="kinematics, laws (except friction)">
+    <label>Confidence 1-5 (optional, e.g. EMI 1, SHM 1, current 2)</label><input id="conf" placeholder="kinematics 4, laws 3, friction 2, SHM 1, EMI 1">
+  </div>
+
+  <div class="card">
+    <h2>3. Weak + Today</h2>
+    <label>Weak topics + kya masla hota hai?</label><textarea id="weak" placeholder="EMI right-hand rules reverse, current KVL loops bhool jata hun, SHM graphs blank">EMI right-hand rules reverse ho jate hain, current KVL loops me phas jata hun, SHM graphs blank</textarea>
+    <label>Today kitna time hai?</label><div class="row"><div><input id="todayMin" type="number" placeholder="60" value="60"></div><div><input id="todayClock" placeholder="19:30" value="19:30"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>📊 Live calculation (LLM ko math nahi karwana parega)</h2>
+    <div class="flex" id="badges"></div>
+    <div class="sub" id="verdictText"></div>
+    <div class="flex">
+      <button onclick="build()">Generate Plan Prompt →</button>
+      <button class="secondary" onclick="fillExample()">Fill FSc Example</button>
+      <button class="secondary" onclick="fillOlevels()">O/A Levels Example</button>
+    </div>
+  </div>
+
+  <div class="card" id="outCard" style="display:none">
+    <h2>✅ Copy this → paste in ChatGPT / Gemini / Meta AI</h2>
+    <div class="flex">
+      <button onclick="copyPrompt()">Copy Prompt</button>
+      <button class="secondary" onclick="copyInstant()">Copy 60-SEC instant (4 lines)</button>
+      <button class="secondary" onclick="copyCard()">Copy blank Card</button>
+    </div>
+    <div class="out" id="out"></div>
+    <h2>📋 Or use this 4-line instant (for 60-SECOND.md)</h2>
+    <div class="out" id="outInstant"></div>
+    <h2>📱 WhatsApp friendly (no tables)</h2>
+    <div class="out" id="outWA"></div>
+  </div>
+
+  <div class="card">
+    <h2>How to use (for Instagram bio)</h2>
+    <div class="sub">
+      1. Fill form upar → Generate → Copy → ChatGPT me paste<br>
+      2. Jo plan aaye, Card ko Notes me save kar lo<br>
+      3. Kal: Card paste + "TODAY 60 min from 19:30"<br>
+      4. DONE ke baad: "DONE minutes: 60 scores: EMI 6/8"<br>
+      5. Story share: Type SHARE in chat → screenshot → tag me
+    </div>
+    <div class="flex">
+      <a href="../STUDENT-FRIENDLY.md" target="_blank"><button class="secondary">Open Student Edition Prompt</button></a>
+      <a href="../60-SECOND.md" target="_blank"><button class="secondary">Open 60-Second Prompt</button></a>
+      <a href="../FOR-INSTAGRAM.md" target="_blank"><button class="secondary">For Instagram Guide</button></a>
+    </div>
+  </div>
+
+  <div class="footer">Study OS — not a 30-day fantasy. Built for real students. No Ollama needed, runs on ChatGPT / Gemini / WhatsApp. <br>github.com/muhummadzarrar09-sudo/Prompt-Lib</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+function daysLeft(dateStr){
+  if(!dateStr) return 18;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const exam = new Date(dateStr); exam.setHours(0,0,0,0);
+  const diff = Math.ceil((exam - today)/86400000);
+  return diff>0?diff:18;
+}
+function calc(){
+  const d = daysLeft($('date').value);
+  const twd = parseInt($('twd').value)||60;
+  const twe = parseInt($('twe').value)||150;
+  const tavg = Math.round((5*twd + twe)/7);
+  const rest = Math.floor(d/7);
+  const buf = d>=21?2:0;
+  const sdays = Math.max(1, d - rest - buf);
+  const bank = +(sdays * tavg/60 * 0.85).toFixed(1);
+  // naive need: count topics
+  const topics = $('topics').value.split(/[,\n]+/).filter(s=>s.trim()).length || 11;
+  const need = +(topics*1.4).toFixed(1); // avg 1.4h per topic
+  const load = bank>0 ? +(need/bank).toFixed(2) : 1.4;
+  let verdict = load<=1.0 ? 'ON TRACK' : load<=1.25 ? 'TIGHT' : 'NOT ENOUGH TIME';
+  let verdictPlain = load<=1.0 ? 'Time ok hai, ho jayega' : load<=1.25 ? 'Time tight hai, triage karna parega' : 'Time kam hai, kuch topics drop karne parenge';
+  let cov = 15; // placeholder
+  return {d, twd, twe, tavg, rest, buf, sdays, bank, need, load, verdict, verdictPlain, cov};
+}
+function renderBadges(){
+  const c = calc();
+  $('badges').innerHTML = `
+    <span class="badge">📅 <b>${c.d} din</b> left</span>
+    <span class="badge">⏰ <b>${c.bank}h</b> hai / <b>${c.need}h</b> chahiye</span>
+    <span class="badge">📊 LOAD <b>${c.load}</b> — ${c.verdict}</span>
+    <span class="badge">🕐 Avg <b>${c.tavg} min/day</b></span>
+    <span class="badge">🛌 Rest ${c.rest} + Buf ${c.buf}</span>
+  `;
+  $('verdictText').innerHTML = `👉 <b>${c.verdictPlain}</b> — ${c.verdict==='NOT ENOUGH TIME' ? 'Is liye 3 kaam pakke, baaki skim/drop' : c.verdict==='TIGHT' ? '3 kaam pakke, baaki light' : 'Plan on track hai'}`;
+}
+function build(){
+  const c = calc();
+  const exam = $('exam').value || 'FSc Physics';
+  const date = $('date').value || '2026-10-15';
+  const clock = $('clock').value || `${$('twd').value} min weekdays`;
+  const topics = $('topics').value;
+  const done = $('done').value;
+  const conf = $('conf').value;
+  const weak = $('weak').value;
+  const todayMin = $('todayMin').value || '60';
+  const todayClock = $('todayClock').value || '19:30';
+  const state = $('state').value;
+
+  const prompt = `You are Study OS Student Edition. Build 7-day plan + TODAY now. No LOAD/WCOV jargon, plain English/Urdu mix.
+
+Exam: ${exam}
+Date: ${date} — DAYS=${c.d} — BANK=${c.bank}h NEED=${c.need}h LOAD=${c.load} ${c.verdict}
+Roz ka time: Weekday ${c.twd} min / Weekend ${c.twe} min total / Clock: ${clock}
+Avg: ${c.tavg} min/day, SDAYS=${c.sdays} (REST ${c.rest} + BUF ${c.buf})
+State today: ${state}
+Topics: ${topics}
+Done: ${done || 'n/a'}
+Confidence: ${conf || 'n/a'}
+Weak + masla: ${weak}
+Today: ${todayMin} min from ${todayClock}
+
+Rules: No 30-day calendar. 7 days only. Weak first. 15-25 min drill on symptom. Every block Done=__/n. 3 non-negotiables + DO NOT OPEN + week strip + TODAY ticks - [ ] + IF THIS DIES + DONE stamp + fenced Study OS Card. Plain language, no LOAD/WCOV codes. If time tight, say "Time kam hai" and triage FULL/SKIM/DROP.
+
+Output order:
+1 COMMAND CENTER plain: Exam | Date | DAYS | BANK vs NEED | verdict | 3 kaam | DO NOT OPEN
+2 Topic table RED first
+3 Weak board Symptom+Drill
+4 Week strip Day | One job | If this dies
+5 TODAY ticks - [ ] with __/n + IF THIS DIES + TOMORROW FIRST + DONE stamp
+6 Card fenced
+
+Start now.`;
+
+  const instant = `Exam: ${exam} | Date: ${date} | Time: ${c.twd}min wd ${c.twe}min wknd | Topics: ${topics.replace(/\n/g,', ')} | Weak: ${weak} | Today: ${todayMin}min ${todayClock} ${state}`;
+
+  const wa = `📚 ${exam} | ${date} | ${c.d} din | ${c.bank}h hai ${c.need}h chahiye → ${c.verdictPlain}
+
+🔥 3 kaam:
+1. (AI will fill)
+2. 
+3.
+
+Topics: ${topics}
+Weak: ${weak}
+Today: ${todayMin} min ${todayClock}
+
+Prompt for WhatsApp Meta AI:
+${prompt.slice(0,1200)}... (full in main box)`;
+
+  $('out').textContent = prompt;
+  $('outInstant').textContent = instant;
+  $('outWA').textContent = wa;
+  $('outCard').style.display = 'block';
+  $('outCard').scrollIntoView({behavior:'smooth'});
+  renderBadges();
+}
+function copyPrompt(){ navigator.clipboard.writeText($('out').textContent); alert('Copied! Paste in ChatGPT / Gemini'); }
+function copyInstant(){ navigator.clipboard.writeText($('outInstant').textContent); alert('Copied instant 4-liner!'); }
+function copyCard(){ 
+  const card = `# STUDY OS CARD
+Date: ${new Date().toISOString().slice(0,10)}
+Exam: ${$('exam').value}
+Exam date: ${$('date').value}
+Days left: ${calc().d}
+Time: ${$('twd').value} wd / ${$('twe').value} wknd
+Topics: ${$('topics').value}
+Weak: ${$('weak').value}
+Today: ${$('todayMin').value} min
+`;
+  navigator.clipboard.writeText(card); alert('Blank card copied!'); 
+}
+function fillExample(){
+  $('exam').value='FSc Physics'; $('twd').value=60; $('twe').value=150; $('topics').value='kinematics, laws + friction, work energy, circular, gravitation, SHM, waves, electrostatics, current electricity, magnetism, EMI'; $('weak').value='EMI right-hand rules reverse, current KVL loops, SHM graphs blank'; $('todayMin').value=60; renderBadges();
+}
+function fillOlevels(){
+  $('exam').value='O Levels Physics + Chemistry'; $('twd').value=75; $('twe').value=210; $('topics').value='Atomic structure, bonding, moles, acids bases, rates, organic alkanes/alkenes, electrochemistry, cells, enzymes, photosynthesis, nephron, hormones, meiosis, ecology'; $('weak').value='organic mechanisms, nephron blank, hormones mix'; $('todayMin').value=75; renderBadges();
+}
+$('date').valueAsDate = new Date(Date.now()+18*86400000);
+setInterval(renderBadges, 1000);
+renderBadges();
+</script>
+</body>
+</html>
